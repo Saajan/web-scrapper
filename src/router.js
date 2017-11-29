@@ -9,24 +9,6 @@ const { renderQueryParams, renderBodyParams } = require('./util/validation');
 
 function createRouter() {
   const router = express.Router();
-
-  if (!_.isEmpty(config.API_TOKENS)) {
-    logger.info('x-api-key authentication required');
-
-    router.use('/*', (req, res, next) => {
-      const userToken = req.headers['x-api-key'];
-      if (!_.includes(validTokens, userToken)) {
-        const err = new Error('Invalid API token in x-api-key header.');
-        err.status = 401;
-        return next(err);
-      }
-
-      return next();
-    });
-  } else {
-    logger.warn('Warning: no authentication required to use the API');
-  }
-
   const getRenderSchema = {
     query: renderQueryParams,
     options: {
