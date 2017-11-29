@@ -33,6 +33,7 @@ async function render(_opts = {}) {
     headless: true,
     args: ['--disable-gpu', '--no-sandbox', '--disable-setuid-sandbox'],
   });
+  
   const page = await browser.newPage();
 
   page.on('console', (...args) => logger.info('PAGE LOG:', ...args));
