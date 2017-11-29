@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const BPromise = require('bluebird');
 const _ = require('lodash');
 const logger = require('../util/logger')(__filename);
 
@@ -8,7 +7,7 @@ async function render(_opts = {}) {
     scrollPage: false,
     emulateScreenMedia: true,
     viewport: {
-      width: 1600,
+      width: 1366,
       height: 1200,
     },
     goto: {
