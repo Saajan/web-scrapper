@@ -1,0 +1,35 @@
+{
+  "name": "webapp-mining",
+  "version": "1.0.0",
+  "description": "Web page PDF rendering.",
+  "main": "src/index.js",
+  "engines": {
+    "node": "8.x.x"
+  },
+  "scripts": {
+    "start": "nodemon --watch ./src -e js src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Saajan/webapp-mining.git"
+  },
+  "author": "Saajan",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "express": "^4.15.5",
+    "express-validation": "^1.0.2",
+    "joi": "^11.1.1",
+    "lodash": "^4.17.4",
+    "morgan": "^1.9.0",
+    "puppeteer": "^0.11.0",
+    "server-destroy": "^1.0.1",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
