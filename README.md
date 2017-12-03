@@ -38,7 +38,7 @@ http://localhost:9000/api/render?url=http://google.com&waitFor=input
 ## API
 
 To understand the API options, it's useful to know how [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md)
-is internally used by this API. The [render code](https://github.com/saajan/web-mining/blob/master/src/core/pdf-core.js#L26)
+is internally used by this API. The [render code](https://github.com/saajan/web-mining/blob/master/api/core/pdf-core.js#L26)
 is really simple, check it out. Render flow:
 
 1. **`page.setViewport(options)`** where options matches `viewport.*`.

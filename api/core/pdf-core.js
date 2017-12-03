@@ -9,6 +9,7 @@ async function render(_opts = {}) {
     viewport: {
       width: 1366,
       height: 1200,
+      deviceScaleFactor:2
     },
     goto: {
       waitUntil: 'networkidle',

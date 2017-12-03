@@ -2,12 +2,12 @@
   "name": "webapp-mining",
   "version": "1.0.0",
   "description": "Web page PDF rendering.",
-  "main": "src/index.js",
+  "main": "api/index.js",
   "engines": {
     "node": "8.x.x"
   },
   "scripts": {
-    "start": "nodemon --watch ./src -e js src/index.js"
+    "start": "nodemon --watch ./api -e js api/index.js"
   },
   "repository": {
     "type": "git",
