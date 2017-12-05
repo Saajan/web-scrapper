@@ -7,7 +7,7 @@
     "node": "8.x.x"
   },
   "scripts": {
-    "start": "nodemon --watch ./api -e js src/index.js"
+    "start": "nodemon --watch ./src -e js src/index.js"
   },
   "repository": {
     "type": "git",

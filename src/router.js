@@ -3,6 +3,7 @@ const Joi = require('joi');
 const validate = require('express-validation');
 const express = require('express');
 const pdf = require('./http/pdf-http');
+const image = require('./http/image-http');
 const config = require('./config');
 const logger = require('./util/logger')(__filename);
 const { renderQueryParams, renderBodyParams } = require('./util/validation');
@@ -16,7 +17,8 @@ function createRouter() {
       allowUnknownQuery: false,
     },
   };
-  router.get('/api/render', validate(getRenderSchema), pdf.getRender);
+  router.get('/api/pdf', validate(getRenderSchema), pdf.getRender);
+  router.get('/api/image', validate(getRenderSchema), image.getRender);
 
   const postRenderSchema = {
     body: renderBodyParams,
@@ -25,7 +27,9 @@ function createRouter() {
       allowUnknownQuery: false,
     },
   };
-  router.post('/api/render', validate(postRenderSchema), pdf.postRender);
+  router.post('/api/pdf', validate(postRenderSchema), pdf.postRender);
+  router.post('/api/image', validate(postRenderSchema), image.postRender);
+  
 
   return router;
 }

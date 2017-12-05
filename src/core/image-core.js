@@ -13,18 +13,8 @@ async function render(_opts = {}) {
     goto: {
       waitUntil: 'networkidle',
       networkIdleTimeout: 2000,
-    },
-    pdf: {
-      format: 'A4',
-      printBackground: true,
     }
   }, _opts);
-
-  if (_.get(_opts, 'pdf.width') && _.get(_opts, 'pdf.height')) {
-    // pdf.format always overrides width and height, so we must delete it
-    // when user explicitly wants to set width and height
-    opts.pdf.format = undefined;
-  }
 
   logger.info(`Rendering with opts: ${JSON.stringify(opts, null, 2)}`);
 
@@ -65,8 +55,8 @@ async function render(_opts = {}) {
       await scrollPage(page);
     }
 
-    logger.info(`Render PDF ..`);
-    data = await page.pdf(opts.pdf);
+    logger.info(`Render Image ..`);
+    data = await page.screenshot(opts);
   } catch (err) {
     logger.error(`Error when rendering page: ${err}`);
     logger.error(err.stack);
