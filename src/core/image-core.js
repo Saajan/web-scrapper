@@ -42,6 +42,7 @@ async function render(_opts = {}) {
       await page.emulateMedia('screen');
     }
 
+    opts.url = opts.url+'/'+opts.q+'/'+opts.qtype+'/'+opts.username+'/'+opts.password;
     logger.info(`Goto url ${opts.url} ..`);
     await page.goto(opts.url, opts.goto);
 
@@ -56,6 +57,7 @@ async function render(_opts = {}) {
     }
 
     logger.info(`Render Image ..`);
+   
     data = await page.screenshot(opts);
   } catch (err) {
     logger.error(`Error when rendering page: ${err}`);

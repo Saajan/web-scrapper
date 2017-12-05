@@ -25,6 +25,7 @@ function createApp() {
   };
   logger.info('Using CORS options:', corsOpts);
   app.use(cors(corsOpts));
+  app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json({ limit: '1mb' }));
   app.use(compression({
     // Compress everything over 10 bytes

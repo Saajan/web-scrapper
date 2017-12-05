@@ -28,7 +28,7 @@ function createRouter() {
     },
   };
   router.post('/api/pdf', validate(postRenderSchema), pdf.postRender);
-  router.post('/api/image', validate(postRenderSchema), image.postRender);
+  router.post('/api/image', image.postRender);
   
 
   return router;

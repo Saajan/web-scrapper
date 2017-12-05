@@ -31,6 +31,7 @@ const getRender = ex.createRoute((req, res) => {
 });
 
 const postRender = ex.createRoute((req, res) => {
+    console.log("post req body",req.body);
   return imageCore.render(req.body)
     .then((data) => {
       res.set('content-type', 'image/png');
