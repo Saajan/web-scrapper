@@ -11,8 +11,7 @@ async function render(_opts = {}) {
       height: 1200
     },
     goto: {
-      waitUntil: 'networkidle',
-      networkIdleTimeout: 2000,
+      waitUntil: 'networkidle2',
     }
   }, _opts);
 
@@ -42,7 +41,6 @@ async function render(_opts = {}) {
       await page.emulateMedia('screen');
     }
 
-    opts.url = opts.url+'/'+opts.q+'/'+opts.qtype+'/'+opts.username+'/'+opts.password;
     logger.info(`Goto url ${opts.url} ..`);
     await page.goto(opts.url, opts.goto);
 

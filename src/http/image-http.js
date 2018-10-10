@@ -19,7 +19,6 @@ const getRender = ex.createRoute((req, res) => {
       timeout: req.query['goto.timeout'],
       waitUntil: req.query['goto.waitUntil'],
       networkIdleInflight: req.query['goto.networkIdleInflight'],
-      networkIdleTimeout: req.query['goto.networkIdleTimeout'],
     }
   };
 
